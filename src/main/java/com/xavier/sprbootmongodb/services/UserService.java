@@ -1,0 +1,20 @@
+package com.xavier.sprbootmongodb.services;
+
+import com.xavier.sprbootmongodb.domain.User;
+import com.xavier.sprbootmongodb.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class UserService {
+
+    //Anotação de injeção de dependencias
+    @Autowired
+    private UserRepository repo;
+
+    public List<User> findAll() {
+        return repo.findAll();
+    }
+}

@@ -1,11 +1,18 @@
 package com.xavier.sprbootmongodb.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+
+@Document(collection = "User") //Anotação para transformar em documentação do mongo
+                                // semelhante a anotação de um banco SQL
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
     private String id;
     private String name;
     private String email;
